@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 2048_container
+    ports:
+      - "8080:80"
+    networks:
+      - 2048-network
+
+networks:
+  2048-network:
+    driver: bridge

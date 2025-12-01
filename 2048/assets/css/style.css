@@ -1,0 +1,270 @@
+@import url('./globals.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    min-height: 100dvh;
+    justify-content: center;
+    background-color: var(--body-bg);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: var(--board-bg);
+
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-box {
+    background: #bbada0;
+    color: #f9f6f2;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.score-title {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.score-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+
+}
+
+main {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.restart-button {
+    margin-top: 2rem;
+    cursor: pointer;
+    background-color: var(--restart-button-bg);
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.board {
+    width: min(90vmin, 500px);
+    height: min(90vmin, 500px);
+    border-radius: 10px;
+    background-color: var(--board-bg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5%;
+    padding: 1.5%;
+}
+
+.board {
+    position: relative;
+}
+
+.empty {
+    background-color: var(--empty-tile-bg);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 3rem;
+    transition: transform 220ms cubic-bezier(.22, .9, .2, 1), background-color 0.35s ease;
+    color: var(--default-tile-color);
+}
+
+.tile.tile-new {
+    animation: pop 160ms cubic-bezier(.2, .8, .2, 1);
+}
+
+
+@keyframes pop {
+    0% {
+        transform: scale(0.2);
+    }
+
+    60% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tile.tile-merged {
+    animation: merge 400ms cubic-bezier(.2, .8, .2, 1);
+}
+
+@keyframes merge {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.two {
+    background-color: var(--tile-2-bg);
+    color: var(--tile-lower-color);
+}
+
+.four {
+    background-color: var(--tile-4-bg);
+    color: var(--tile-lower-color);
+}
+
+.eight {
+    background-color: var(--tile-8-bg);
+}
+
+.sixteen {
+    background-color: var(--tile-16-bg);
+}
+
+.thirty-two {
+    background-color: var(--tile-32-bg);
+}
+
+.sixty-four {
+    background-color: var(--tile-64-bg);
+}
+
+.hundred {
+    background-color: var(--tile-128-bg);
+}
+
+.two-hundred {
+    background-color: var(--tile-256-bg);
+}
+
+.five-hundred {
+    background-color: var(--tile-512-bg);
+}
+
+.thousand {
+    background-color: var(--tile-1024-bg);
+}
+
+.two-thousand {
+    background-color: var(--tile-2048-bg);
+}
+
+.game-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 1.25rem;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 180ms ease, visibility 0ms 180ms;
+}
+
+.game-overlay.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 180ms ease;
+}
+
+.game-overlay .panel {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 24px 36px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-overlay .panel .title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.game-overlay .panel button {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #f9f6f2;
+    color: #333;
+    cursor: pointer;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.3rem;
+}
