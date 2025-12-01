@@ -80,8 +80,7 @@ El proyecto se ejecuta con **Docker Compose**, que proporciona el entorno correc
    ```
 
 3. **Abre en tu navegador**:
-   - `http://localhost`
-   - O `http://localhost:80`
+   - `http://localhost:8080/`   
 
 4. **Para detener el contenedor**:
    ```bash
