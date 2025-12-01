@@ -78,9 +78,6 @@ main {
 }
 
 
-
-
-
 .restart-button {
     margin-top: 2rem;
     cursor: pointer;
@@ -94,6 +91,7 @@ main {
 }
 
 .board {
+    position: relative;
     width: min(90vmin, 500px);
     height: min(90vmin, 500px);
     border-radius: 10px;
@@ -102,11 +100,14 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 5%;
-    padding: 1.5%;
+    padding: 1em;
 }
 
-.board {
-    position: relative;
+.board .floating-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
 }
 
 .empty {
@@ -125,7 +126,7 @@ main {
     justify-content: center;
     font-weight: bold;
     font-size: 3rem;
-    transition: transform 220ms cubic-bezier(.22, .9, .2, 1), background-color 0.35s ease;
+    transition: transform 100ms cubic-bezier(.22, .9, .2, 1);
     color: var(--default-tile-color);
 }
 
@@ -149,7 +150,7 @@ main {
 }
 
 .tile.tile-merged {
-    animation: merge 400ms cubic-bezier(.2, .8, .2, 1);
+    animation: merge 100ms cubic-bezier(.2, .8, .2, 1);
 }
 
 @keyframes merge {
