@@ -3,7 +3,7 @@
 Recreación del clásico juego **2048** en Vanilla JavaScript, CSS y HTML puro. Combina tiles numéricas para alcanzar el número 2048 y obtener la máxima puntuación.
 
 <div align="center">
-  <img src="./assets/img/screenshot.png" alt="Gameplay 2048" width="400">
+  <img src="./2048/assets/img/screenshot.png" alt="Gameplay 2048" width="400">
   <p><em>Interfaz del juego 2048</em></p>
 </div>
 
