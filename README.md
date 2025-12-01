@@ -11,7 +11,7 @@ Este repositorio documenta mi progreso, desafíos y soluciones desarrolladas dur
 | Proyecto | Descripción | Stack | Estado |
 | :--- | :--- | :--- | :---: |
 | **00 - 2048** | Recreación del famoso juego de lógica matemática. Foco en algoritmos y manipulación del DOM. | `Vanilla JS` `CSS` | ✅ Completado |
-| **02 - TripRecommender** | Aplicación para filtrar y buscar destinos turísticos. Manejo de estado complejo y renderizado condicional. | `React` `Hooks` | 🚧 En Progreso |
+| **02 - TripRecommender** | Aplicación para filtrar y buscar destinos turísticos. Manejo de estado complejo y renderizado condicional. | `React` `Hooks` | ⏳ Pendiente |
 | **04 - ServiceDeskai** | Dashboard de gestión de tickets. Implementación de CRUD y lógica de negocio simulada. | `React` `API` | ⏳ Pendiente |
 
 ### 📅 Semana 2: Consolidación y Proyecto Final
